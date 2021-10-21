@@ -13,7 +13,7 @@ const Recipe = () => {
         <RecipeDescription>
           Legendární salát z dílny paní Vinšové.
       </RecipeDescription>
-      <RecipeImage src={pic} alt="blabla" />
+      <RecipeImage src={pic} alt="obrazok" />
       <RecipeIngredients> tady napisu ingredience
       </RecipeIngredients>
     </RecipeContainer>
