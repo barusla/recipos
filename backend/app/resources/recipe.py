@@ -2,6 +2,7 @@ from flask_restful import Resource
 from app.models import Recipe
 from flask import jsonify, request
 from app import api, db
+import json
 
 @api.resource('/recipes/<id>')
 class RecipeResource(Resource):
@@ -9,7 +10,8 @@ class RecipeResource(Resource):
     recipe = db.session.query(Recipe).get(id)
     return jsonify(recipe)
 
-  def post(self, id):
-    return request.json
-    db.session.add(Recipe(request.json['name']))
+@api.resource('/recipes')
+class RecipeResourceList(Resource):
+  def post(self):
+    db.session.add(Recipe(json.loads(request.json)['name']))
     db.session.commit()
