@@ -1,1 +1,1 @@
-DATBASE_URI = 'postgresql://vinsho:I<3Recipos@localhost/recipos' 
+DATBASE_URI = 'postgresql://pi:I<3Recipos@localhost/recipos' 

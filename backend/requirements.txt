@@ -1,2 +1,5 @@
-bcrypt
+flask
+flask-restful
+flask-sqlalchemy
+psycopg2
 
