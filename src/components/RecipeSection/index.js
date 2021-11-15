@@ -1,23 +1,25 @@
-//import React, {Component} from 'react'
-import {RecipeHeader, Bounce, RecipeContainer, RecipeImage, RecipeIngredients, RecipeDescription} from './RecipeElements'
+import React from 'react';
+import {RecipeHeader, Bounce, RecipeInfo, RecipeContainer, RecipeImage, RecipeIngredients, RecipeDescription} from './RecipeElements'
 import pic from '../../images/1.jpg'
 import chilli from '../../images/chilli.png'
 
 
-const Recipe = () => {
+const RecipeComponent = (recipe) => {
   return (
     <RecipeContainer>
       <RecipeHeader>
-        Bramborový salát<Bounce src={chilli} />
+        {recipe.name}<Bounce src={chilli} /><Bounce src={chilli} />
       </RecipeHeader>
         <RecipeDescription>
           Legendární salát z dílny paní Vinšové.
       </RecipeDescription>
-      <RecipeImage src={pic} alt="obrazok" />
-      <RecipeIngredients> tady napisu ingredience
-      </RecipeIngredients>
+      <RecipeInfo>
+        <RecipeIngredients> tady napisu ingredience
+        </RecipeIngredients>
+        <RecipeImage src={pic} alt="obrazok" />
+      </RecipeInfo>
     </RecipeContainer>
   )
 }
 
-export default Recipe
+export default RecipeComponent

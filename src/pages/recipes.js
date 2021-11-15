@@ -1,13 +1,13 @@
 import React from 'react'
-import Navbar from '../components/NavBar'
-import Recipe from '../components/RecipeSection'
+import {Link} from 'react-router-dom';
 
 const Recipes = () => {
   return (
-    <>
-      <Navbar/>
-      <Recipe/>
-    </>
+    <div>
+      <h1>
+        <Link to={'/recipes/1'}>Receptik</Link>
+      </h1>
+    </div>
   )
 }
 
