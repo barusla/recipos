@@ -8,7 +8,9 @@ function Recipe({ match }) {
     console.log(match.params.id)
   }, []);
 
-  const [recipe, setRecipe] = useState({});
+  const [recipe, setRecipe] = useState({
+    ingredients: {}    
+  });
 
   const fetchRecipe = async () => {
     const recipeData = await fetch(`http://127.0.0.1:5000/recipes/${match.params.id}`);

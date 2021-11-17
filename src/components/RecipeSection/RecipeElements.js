@@ -32,31 +32,35 @@ export const RecipeHeader = styled.header`
 
 export const RecipeInfo = styled.div`
   display: flex;
+  margin-top: 1%;
 `
 
 export const RecipeImage = styled.img`
   justify-content: right;
   position: absolute;
   margin-top: 30px;
-  right: 5%;
+  right: 15%;
   width: 35%;
 `
-export const RecipeIngredients = styled.li`
+export const RecipeIngredients = styled.div`
   position: absolute;
-  font-size: 1.5rem;
   margin-top: 30px;
-  left: 40px;
-  /* font-weight: bold; */
-  //font-family: cursive;
-  //font-style: italic;
+  left: 15%;
     
 `
+export const RecipeIngredient = styled.li`
+  font-size: 1.5rem;
+  list-style-type: none;
+
+
+`
+
 export const RecipeDescription =styled.sub`
   display: flex;
   justify-content: center;
   font-size: 1rem;
   color: ${fontColor};
-  padding: 12px;
+  padding: 24px;
   font-style: italic;
 `
 
