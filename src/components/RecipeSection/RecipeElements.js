@@ -1,57 +1,67 @@
 import styled from 'styled-components';
-import { bounce } from 'react-animations';
+import { tada } from 'react-animations';
 import {keyframes} from "styled-components";
+import { backgroundColor, panelColor, fontColor, buttonColor } from '../../config'
 
 export const Bounce = styled.img`
   position: relative;
-  width: 4%;
-  padding: 24px;
+  width: 1%;
+  height: 1%;
+  margin-top: 10px ;
+  padding: 6px;
 
-  animation: 2s ${keyframes`${bounce}`} infinite;
+  animation: 2s ${keyframes`${tada}`} infinite;
 `
 
 export const RecipeContainer = styled.div`
-  background: linear-gradient(hotpink, pink);
-  height: 800px;
-  
 
-`
+  `
 
 export const RecipeHeader = styled.header`
   display: flex;
   justify-content: center;
-  font-size: 6rem;
-  padding: 24px;
+  color: ${fontColor};
+  font-size: 3rem;
+  padding: 12px;
+  margin-right: 10px ;
+  margin-top: 70px ;
+
   /* font-weight: bold; */
-  //font-family: cursive;
-  //font-style: italic;
+
+`
+
+export const RecipeInfo = styled.div`
+  display: flex;
+  margin-top: 1%;
 `
 
 export const RecipeImage = styled.img`
-  position: relative;
-  width: 40%;
-  padding: 24px;
-`
-export const RecipeIngredients = styled.li`
+  justify-content: right;
   position: absolute;
-  top: 350px;
-  left: 630px;
-  width: 100%;
-  //display: flex;
-  //justify-self: right;
-  font-size: 2rem;
-  padding: 24px;
-  /* font-weight: bold; */
-  //font-family: cursive;
-  //font-style: italic;
+  margin-top: 30px;
+  right: 15%;
+  width: 35%;
+`
+export const RecipeIngredients = styled.div`
+  position: absolute;
+  margin-top: 30px;
+  left: 15%;
     
 `
+export const RecipeIngredient = styled.li`
+  font-size: 1.5rem;
+  list-style-type: none;
+
+
+`
+
 export const RecipeDescription =styled.sub`
   display: flex;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1rem;
+  color: ${fontColor};
   padding: 24px;
-  /* font-weight: bold; */
+  font-style: italic;
 `
 
  

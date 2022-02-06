@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
+import { backgroundColor, panelColor, fontColor, buttonColor } from '../../config'
 
 export const Nav = styled.nav`
-  background: black;
+  background: ${panelColor};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +25,7 @@ export const NavbarContainer = styled.div`
 `
 
 export const NavLogo = styled(Link)`
-  color: darkcyan;
+  color: ${fontColor};
   justify-self: flex-start;
   cursor: pointer;
   font-size: 1.5rem;
@@ -49,7 +50,7 @@ export const NavItem = styled.li`
 `
 
 export const NavLink = styled(Link)`
-  color: #fff;
+  color: ${fontColor};
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -71,10 +72,10 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(Link)`
   border-radius: 50px;
-  background: darkcyan;
+  background: ${buttonColor};
   white-space: nowrap;
   padding: 10px 22px;
-  color: black;
+  color: ${fontColor};
   font-size: 16px;
   text-decoration: none;
   outline: none;
@@ -83,6 +84,6 @@ export const NavBtnLink = styled(Link)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    color: white;
+    color: ${backgroundColor};
   }
 `

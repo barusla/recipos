@@ -4,11 +4,15 @@ from flask import jsonify, request
 from app import api, db
 import json
 
-@api.resource('/recipes/<id>')
+@api.resource('/recipes/<recipe_id>')
 class RecipeResource(Resource):
-  def get(self, id):
-    recipe = db.session.query(Recipe).get(id)
+  def get(self, recipe_id):
+    recipe = db.session.query(Recipe).get(recipe_id)
     return jsonify(recipe)
+    
+  def delete(self, recipe_id):
+    db.session.query(Recipe).filter_by(id=recipe_id).delete()
+    db.session.commit()
 
 @api.resource('/recipes')
 class RecipeResourceList(Resource):

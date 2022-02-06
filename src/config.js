@@ -1,0 +1,4 @@
+export const backgroundColor = "#F0E9D2";
+export const panelColor = "#B4A888";
+export const buttonColor = "#548B81";
+export const fontColor = "#3F2C00";
