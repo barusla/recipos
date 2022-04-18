@@ -1,4 +1,5 @@
 from flask import Flask
+from fastapi import FastAPI
 from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 from config import DATBASE_URI

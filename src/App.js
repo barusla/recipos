@@ -2,17 +2,18 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages";
 import Recipe from "./pages/recipe";
 import Recipes from "./pages/recipes";
-import Navbar from './components/NavBar'
-import { GlobalStyle } from "./components/globalComponents/globalElements";
+import NewRecipe from "./pages/newRecipe";
+import Navbar from "./components/NavBar";
 
 function App() {
-  return (     
+  return (
     <Router>
-      <Navbar/>
+      <Navbar />
       <Switch>
         <Route path='/' exact component={Home} />
+        <Route path='/newRecipe' exact component={NewRecipe} />
         <Route path='/recipes' exact component={Recipes} />
-        <Route path="/recipes/:id" component={Recipe} />
+        <Route path='/recipes/:id' component={Recipe} />
       </Switch>
     </Router>
   );

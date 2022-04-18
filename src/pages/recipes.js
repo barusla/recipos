@@ -1,14 +1,33 @@
-import React from 'react'
-import {Link} from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import NotFoundComponent from "../components/globalComponents/notFound";
+import { API } from "../config";
+import RecipesComponent from "../components/RecipesSection";
 
 const Recipes = () => {
-  return (
-    <div>
-      <h1>
-        <Link to={'/recipes/1'}>Receptik</Link>
-      </h1>
-    </div>
-  )
-}
+  useEffect(() => {
+    fetchRecipes();
+  }, []);
 
-export default Recipes
+  const [recipes, setRecipes] = useState([]);
+
+  const fetchRecipes = async () => {
+    let recipesJson;
+    try {
+      const recipesData = await fetch(`${API}recipes`);
+      recipesJson = await recipesData.json();
+    } catch (error) {
+      recipesJson = null;
+    }
+    setRecipes(recipesJson);
+  };
+  if (recipes == null) {
+    return NotFoundComponent();
+  }
+  if (recipes.length) {
+    return RecipesComponent(recipes);
+  } else {
+    return [];
+  }
+};
+
+export default Recipes;
