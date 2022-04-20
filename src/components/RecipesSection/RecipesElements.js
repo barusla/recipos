@@ -7,8 +7,7 @@ export const RecipesContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 
-  margin-right: 5%;
-  margin-left: 5%;
+  margin: 0 5%;
 `;
 
 export const RecipeBox = styled.div`

@@ -66,6 +66,7 @@ export const DirectionsContainer = styled.div`
   padding: 16px;
   border: 1px solid black;
   border-radius: 16px;
+  margin-bottom: 16px;
 `;
 
 export const Direction = styled.li`
