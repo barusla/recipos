@@ -86,19 +86,11 @@ function NewRecipeComponent() {
             type='file'
             onChange={(e) => setFile(e.target.files[0])}
           />
-          <HStack w='100%'>
-            <Select name='pungency' placeholder='Pungency' required>
-              <option value='mild'>mild</option>
-              <option value='medium'>medium</option>
-              <option value='very hot'>very hot</option>
-              <option value='extremely hot'>extremely hot</option>
-            </Select>
-            <Select name='type' placeholder='Type' required>
-              <option value='soup'>soup</option>
-              <option value='main dish'>main dish</option>
-              <option value='dessert'>dessert</option>
-            </Select>
-          </HStack>
+          <Select name='type' placeholder='Select type' required>
+            <option value='soup'>soup</option>
+            <option value='main dish'>main dish</option>
+            <option value='dessert'>dessert</option>
+          </Select>
           <ListTableStack>
             <TableStackHeading>Ingredients</TableStackHeading>
             <IngredientList

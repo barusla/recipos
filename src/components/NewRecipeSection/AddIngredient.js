@@ -45,7 +45,7 @@ function AddIngredient({ addIngredient }) {
 
   return (
     <Container centerContent>
-      <HStack w='100%'>
+      <HStack>
         <Input
           placeholder='Pick ingredient'
           onChange={(e) => setName(e.target.value)}
