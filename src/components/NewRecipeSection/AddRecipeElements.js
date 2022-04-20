@@ -1,3 +1,4 @@
+import reactSelect from "react-select";
 import styled from "styled-components";
 import { buttonColor, panelColor, fontColor } from "../../config";
 

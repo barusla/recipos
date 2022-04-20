@@ -20,8 +20,27 @@ import { ListTableStack, TableStackHeading } from "./AddRecipeElements";
 function NewRecipeComponent() {
   const [ingredients, setIngredients] = useState([]);
   const [directions, setDirections] = useState([]);
+  const [avaialbleIngredients, setAvailableIngredients] = useState([]);
   const toast = useToast();
   const [file, setFile] = useState("");
+
+  useEffect(() => {
+    fetchIngredients();
+  }, []);
+
+  const fetchIngredients = async () => {
+    let ingredientsJson;
+    try {
+      const ingredientsData = await fetch(`${API}ingredients`);
+      ingredientsJson = await ingredientsData.json();
+      ingredientsJson = ingredientsJson.map((ing) => {
+        return { value: ing.name, label: ing.name };
+      });
+    } catch (error) {
+      ingredientsJson = null;
+    }
+    setAvailableIngredients(ingredientsJson);
+  };
 
   function saveRecipe(e) {
     e.preventDefault();
@@ -31,13 +50,14 @@ function NewRecipeComponent() {
         status: "error",
         duration: 2000,
       });
+    } else {
+      let data = new FormData(e.target);
+      data.append("image", file, file.name);
+      data.append("user_id", "1");
+      data.append("ingredients", JSON.stringify(ingredients));
+      data.append("directions", JSON.stringify(directions));
+      axios.post(`${API}recipes`, data);
     }
-    let data = new FormData(e.target);
-    data.append("image", file, file.name);
-    data.append("user_id", "1");
-    data.append("ingredients", JSON.stringify(ingredients));
-    data.append("directions", JSON.stringify(directions));
-    axios.post(`${API}recipes`, data);
   }
 
   function setStateDirections(directions) {
@@ -97,7 +117,10 @@ function NewRecipeComponent() {
               ingredients={ingredients}
               removeIngredient={removeIngredient}
             />
-            <AddIngredient addIngredient={addIngredient} />
+            <AddIngredient
+              addIngredient={addIngredient}
+              ingredients={avaialbleIngredients}
+            />
           </ListTableStack>
           <ListTableStack>
             <TableStackHeading>Directions</TableStackHeading>
