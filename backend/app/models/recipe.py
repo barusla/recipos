@@ -10,13 +10,11 @@ class Recipe(db.Model):
   author_name: str
   ingredients: list
   directions: list
-  pungency: enum
   type: enum
 
   id = db.Column(db.Integer, primary_key=True)
   name = db.Column(db.String(256))
   user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
-  pungency = db.Column(db.Enum('mild', 'medium', 'hot', 'very hot', 'extremely hot', name='pungency_enum'))
   type = db.Column(db.Enum('soup', 'main dish', 'dessert', name='recipe_type_enum'))
   
   author = db.relationship('User', uselist=False)
